@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+    <configuration>
+        <custom-converters>
+            <converter type="fitness.dozer.StringEnumConverter">
+                <class-a>java.lang.Enum</class-a>
+                <class-b>java.lang.String</class-b>
+            </converter>
+        </custom-converters>
+    </configuration>
+
+    <!--
+        <mapping map-id="productToModel">
+            <class-a>fitness.domain.dto.ProductDTO</class-a>
+            <class-b>fitness.rest.model.ProductModel</class-b>
+            <field>
+                <a>id</a>
+                <b>productId</b>
+            </field>
+            <field custom-converter="fitness.dozer.TotalsConverter">
+                <a>this</a>
+                <b>totals</b>
+            </field>
+        </mapping>
+
+        <mapping map-id="productToEntity">
+            <class-a>fitness.domain.dto.ProductDTO</class-a>
+            <class-b>fitness.persistence.entity.ProductEntity</class-b>
+        </mapping>
+
+        <mapping>
+            <class-a bean-factory="fitness.dozer.ProteinBeanFactory">fitness.domain.dto.types.Protein</class-a>
+            <class-b>fitness.domain.dto.types.Protein</class-b>
+        </mapping>
+        <mapping>
+            <class-a bean-factory="fitness.dozer.FatBeanFactory">fitness.domain.dto.types.Fat</class-a>
+            <class-b>fitness.domain.dto.types.Fat</class-b>
+        </mapping>
+        <mapping>
+            <class-a bean-factory="fitness.dozer.CarbohydrateBeanFactory">fitness.domain.dto.types.Carbohydrate</class-a>
+            <class-b>fitness.domain.dto.types.Carbohydrate</class-b>
+        </mapping>
+        <mapping>
+            <class-a bean-factory="fitness.dozer.CaloriesBeanFry">fitness.domain.dto.types.Calories</class-a>
+            <class-b>fitness.domain.dto.types.Calories</class-b>
+        </mapping>
+
+        <mapping>
+            <class-a>fitness.domain.dto.ProductLineDTO</class-a>
+            <class-b>fitness.rest.model.ProductLineResponseModel</class-b>
+            <field>
+                <a>id</a>
+                <b>lineId</b>
+            </field>
+            <field>
+                <a>product.name</a>
+                <b>productName</b>
+            </field>
+            <field custom-converter="fitness.dozer.NutritionFactsConverter">
+                <a set-method="withTotals">totals</a>
+                <b >totals</b>
+            </field>
+
+        </mapping>
+        -->
+    <mapping>
+        <class-a>fitness.domain.dto.ProductDTO</class-a>
+        <class-b>fitness.rest.model.ProductModel</class-b>
+        <field>
+            <a>id</a>
+            <b>productId</b>
+        </field>
+        <field>
+            <a>totals</a>
+            <b>totals</b>
+        </field>
+    </mapping>
+
+    <mapping>
+        <class-a>fitness.domain.dto.ProductLineDTO</class-a>
+        <class-b>fitness.rest.model.ProductLineResponseModel</class-b>
+        <field>
+            <a>id</a>
+            <b>lineId</b>
+        </field>
+        <field>
+            <a>product.name</a>
+            <b>productName</b>
+        </field>
+    </mapping>
+
+    <mapping>
+        <class-a>fitness.domain.dto.ProductDTO</class-a>
+        <class-b>fitness.persistence.entity.ProductEntity</class-b>
+        <field>
+            <a>totals.protein</a>
+            <b>protein</b>
+        </field>
+        <field>
+            <a>totals.fat</a>
+            <b>fat</b>
+        </field>
+        <field>
+            <a>totals.carbohydrate</a>
+            <b>carbohydrate</b>
+        </field>
+        <field>
+            <a>totals.calories</a>
+            <b>calories</b>
+        </field>
+    </mapping>
+
+</mappings>
